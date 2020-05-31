@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/statis/,classpath:/public/,file:${web.upload-path}
+  datasource:
+    username: chauncy
+    password: 332501080
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/schoolmarket2017011212?useUnicode=True&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+web:
+  upload-path: /Users/shihuazhuo/Desktop/file_upload_folder/
+  doman: http://127.0.0.1
+server:
+  port: 8082
