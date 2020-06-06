@@ -44,4 +44,11 @@ public class OrderService {
     public List<ProductOrder> findAllOrderByUserId(Integer userId){
         return productOrderRepository.findAllByUserId(userId);
     }
+
+    public boolean comment(Integer id, String comment){
+        ProductOrder order = productOrderRepository.findById(id).get();
+        order.setOrderComment(comment);
+        productOrderRepository.save(order);
+        return true;
+    }
 }

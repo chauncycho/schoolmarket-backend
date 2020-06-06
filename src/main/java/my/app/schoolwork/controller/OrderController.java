@@ -24,4 +24,13 @@ public class OrderController {
     public Result findAllOrderByUserId(Integer userId){
         return Result.ok(orderService.findAllOrderByUserId(userId));
     }
+
+    @GetMapping("/order/comment")
+    public Result comment(Integer id, String comment){
+        if (orderService.comment(id,comment)){
+            return Result.ok();
+        } else {
+            return Result.error();
+        }
+    }
 }
